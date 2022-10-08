@@ -51,8 +51,8 @@ To use the domain name, users must register a domain. A domain registration is a
 
 ### Expiry
 
-- If the domain name is not renewed by the expiration date, the name will enter a renewal grace period of 90 days, user can renew it within such period.
-- During the renewal grace period, the name would invalid, and all modification to it would be ignored.
+- If the domain name is not renewed by the expiration date, the name will enter a renewal grace period of 90 days, the user can renew it within such period.
+- During the renewal grace period, the name would be invalid, and all modifications to it would be ignored.
 
 carried out the “decaying price premium” [10], where the price of expired names will start at $2,000
 combining with normal annual rent and will decrease linearly to normal annual rent in 28 days.
