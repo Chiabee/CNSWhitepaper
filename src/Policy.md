@@ -12,7 +12,7 @@ Each field is explained below:
 - **Domain Suffix**.
     The domain suffix (such as .xch) identifies the registry to which the name belongs.
 - **Name**.
-    Name is the main identifier that accept numbers, letters (case insensitive), _(underscore), -(dash).
+    Name is the main identifier that accepts numbers, letters (case insensitive), _(underscore), -(dash).
 
 Emoji will be transformed into Unicode, for example, 😊 = 567890 = xn-567890，thus 😊.xch is equivalent to xn-567890.xch.
 
@@ -36,4 +36,4 @@ TODO:
 
 NFT compatibility
 
-Domain NFT is full compatible with Chia NFTv1, can be traded, exchanged, transferred, and modified. 
+Domain NFT is full compatible with Chia NFTv1, and can be traded, exchanged, transferred, and modified. 
