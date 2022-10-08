@@ -36,7 +36,7 @@ CNS domain names will be assigned through **retention**, **public registration**
 - The domain name of an important website will be retained for three years, and domain holders can verify the domain through their domain name certificate in a private manner.
 - Domain names with 7 or more letters are open for public registration on a first-come-first-served basis.
 
-To use the domain name, users must register a domain. A domain registration is a Chia NFT with some special properties:
+To use the domain name, users must register a domain. Domain registration is a Chia NFT with some special properties:
 
 - Domain registrations always have expiry dates. To keep a domain, users must make sure to renew the domain before it expires.
 - Expired domains are sold at auction. Expired names that are not sold at auction can be registered by others.
