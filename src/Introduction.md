@@ -58,4 +58,4 @@ The FIO Protocol is a decentralized service layer that bridges the gap between c
 
 ### BONFIDA
 
-BONFIDA is a decentralized name service build on the solana blockchain, which has a simple mission of providing a decentralized and yet affordable way to map domain names (represented as .sol) to on-chain data. Where on-chain data can be anything from a Solana (SOL) address to IPFS CID, images, text, and more.BONFIDA provide the domain name exchange in auction way.
+BONFIDA is a decentralized name service build on the solana blockchain, which has a simple mission of providing a decentralized and yet affordable way to map domain names (represented as .sol) to on-chain data. Where on-chain data can be anything from a Solana (SOL) address to IPFS CID, images, text, and more.BONFIDA supports the domain name exchange in auction way.
