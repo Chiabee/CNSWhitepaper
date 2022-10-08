@@ -16,7 +16,9 @@ Each field is explained below:
 
 Emoji will be transformed into Unicode, for example, 😊 = 567890 = xn-567890，thus 😊.xch is equivalent to xn-567890.xch.
 
-### Retention
+### Retention mechanism
+
+In order to prevent scammers, it was decided to add a safeguard mechanism by preserving some domains for people who might be at risk of being impersonated.
 
 The domain name of an important website will be retained for three years, and domain holders can verify the domain through their domain name certificate in a private manner, and the retained domain names are as follows:
 
@@ -26,7 +28,7 @@ TODO:
 - Top 100 projects on CoinMarketCap
 - Names in the list of Alexa top 100,000[alexa] domains are also pre-reserved for further inclusion of existing stakeholders (with deduplication and common words down to above 80,000 names). The latter names are converted to top-level domains by selecting their first domain name label.
 
-
+**These domains will appear as “RESERVED BY ChiaNameService”**
 ### Subdomains
 
 
