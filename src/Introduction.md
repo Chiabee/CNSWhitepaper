@@ -2,20 +2,20 @@
 
 ## About
 
-Chia Name Service (CNS) is a decentralized ecosystem built on Chia Blockchain with its UTXO model and Chialisp Smart Contracts. CNS not only aims to provide name service to users on Chia Blockchain, but also providing cross chain service with verifiable proof from most secured blockchain - Chia.
+Chia Name Service (CNS) is a decentralized ecosystem built on Chia Blockchain with its UTXO model and Chialisp Smart Contracts. CNS not only aims to provide name service to users on Chia Blockchain, but also provides cross-chain service with verifiable proof from the most secured blockchain - Chia.
 
-CNS generates the name with `.xch` suffix, the name is able to resolve various type of data both on-chain or off-chain, including addresses, content, websites, social accounts, etc. Owners have full ownership and management permission. Owner can trade name like a normal NFT.
+CNS generates the name with the `.xch` suffix, the name is able to resolve various types of data both on-chain or off-chain, including addresses, content, websites, social accounts, etc. Owners have full ownership and management permission. Owner can trade the name like a normal NFT.
 
 **Our Vision**
 
-CNS is a universal name service that seamlessly connects people, information, assets, and applications in the digital world. Although it is secured by Chia Blockchain, it is chain-agnostic. The CNS is decentralized, censorship-resistant, and open-sourced digital gateway to the Web 3.0.
+CNS is a universal name service that seamlessly connects people, information, assets, and applications in the digital world. Although it is secured by Chia Blockchain, it is chain-agnostic. The CNS is a decentralized, censorship-resistant, and open-sourced digital gateway to Web 3.0.
 
 **Our Goals**
 
-- Realize a secure, transparent, and open name service.
+- Realize a secure, transparent, and open-name service.
 - Serve as a digital gateway for a person or an organization to Web 3.0.
 - Interoperate between Web 3.0 and the Web 2.0.
-- Build a universal name service for all digital world.
+- Build a universal name service for all digital worlds.
 
 ## Features
 
@@ -25,7 +25,7 @@ CNS is a universal name service that seamlessly connects people, information, as
 - **NFT**.
     CNS is recorded on the chain in the form of NFT, which can be easily queried and interacted with by any application or user.
     CNS is unique and indivisible and can be transacted and circulated as the NFT in the marketplace.
-    The attribute of domain can always be modified by owner, others have no chance to manipulate it.
+    The attribute of the domain can always be modified by the owner, others have no chance to manipulate it.
     The attribute can be modified by any compatible wallet/client.
 - **Digital Gateway**.
     The CNS can store a collection of personal identity data, and represent the unique identity of Web3.
@@ -47,6 +47,6 @@ On the Ethereum blockchain, Ethereum Name Service is the most notable name servi
 
 ### FIO protocol
 
-The FIO Protocol is a decentralized service layer that bridges the gap between crypto endpoints such as wallets, exchanges, crypto payment processors, and any other application in which crypto assets are held and/or transferred. The FIO Protocol reimagines and enables a better way of sending and receiving blockchain-based value, regardless of the wallet, exchange, token, or coin used. It is worth mentioning that FIO has its blockchain but only acts as a service layer independent of other public chains, which ensures the security of address data on the one hand and ensures that the domain name service is not gan'rao by the public chain on the other.
+The FIO Protocol is a decentralized service layer that bridges the gap between crypto endpoints such as wallets, exchanges, crypto payment processors, and any other application in which crypto assets are held and/or transferred. The FIO Protocol reimagines and enables a better way of sending and receiving blockchain-based value, regardless of the wallet, exchange, token, or coin used. It is worth mentioning that FIO has its blockchain but only acts as a service layer independent of other public chains, which ensures the security of address data on the one hand and ensures that the domain name service is not disrupted by the public chain on the other.
 
 ### 其他，如TNS/ANS
