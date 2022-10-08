@@ -34,12 +34,19 @@ CNS is a universal name service that seamlessly connects people, information, as
     By integrating multi-chain data and even the legacy network data in a single place, the Digital Gateway of Web 3.0 to all your assets is formed.
 
 
-## 挑战
-### 安全的去中心化域名系统
-### 子域名的支持
-### ...
+## Use case
 
-## 现有方案
+- **Simplified Payments**
+    Instead of having to remember someone’s Chia wallet address, you can easily send them a payment just by knowing their domain name. CNS  implements a smart contract that will resolve the chosen domain to the correct address on the blockchain and issue the payment.
+- **Custom Information Storage**
+    Users can store arbitrary custom information (in the form of key-value pairs) with their domain on the blockchain. This can be useful, for example, if they wish to provide publicly available contact information, such as their email, Twitter handle, etc.
+- **Subdomains**
+    Owners of domains can mint subdomains which offer even more ability for customization. For example, businesses can have several payment addresses and a unique subdomain linked to each one of them. For regular orders they might use `pay.business.cns` and for express delivery `express-pay.business.cns`. Another example of subdomain usage would be for displaying different website content, like the `blog. cns` for blog posts and `contact.blog.cns` to show additional contact information.
+
+
+
+
+## Domains in Blockchain
 
 ### Ethereum Name Service
 
@@ -49,4 +56,6 @@ On the Ethereum blockchain, Ethereum Name Service is the most notable name servi
 
 The FIO Protocol is a decentralized service layer that bridges the gap between crypto endpoints such as wallets, exchanges, crypto payment processors, and any other application in which crypto assets are held and/or transferred. The FIO Protocol reimagines and enables a better way of sending and receiving blockchain-based value, regardless of the wallet, exchange, token, or coin used. It is worth mentioning that FIO has its blockchain but only acts as a service layer independent of other public chains, which ensures the security of address data on the one hand and ensures that the domain name service is not disrupted by the public chain on the other.
 
-### 其他，如TNS/ANS
+### BONFIDA
+
+BONFIDA is a decentralized name service build on the solana blockchain, which has a simple mission of providing a decentralized and yet affordable way to map domain names (represented as .sol) to on-chain data. Where on-chain data can be anything from a Solana (SOL) address to IPFS CID, images, text, and more.BONFIDA provide the domain name exchange in auction way.
