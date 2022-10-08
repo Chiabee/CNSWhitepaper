@@ -4,7 +4,7 @@
 
 Chia Name Service (CNS) is a decentralized ecosystem built on Chia Blockchain with its UTXO model and Chialisp Smart Contracts. CNS not only aims to provide name service to users on Chia Blockchain, but also provides cross-chain service with verifiable proof from the most secured blockchain - Chia.
 
-CNS generates the name with the `.xch` suffix, the name is able to resolve various types of data both on-chain or off-chain, including addresses, content, websites, social accounts, etc. Owners have full ownership and management permission. Owner can trade the name like a normal NFT.
+CNS generates the name with the `.xch` suffix, the name is able to resolve various types of data both on-chain or off-chain, including addresses, content, websites, social accounts, etc. Owners have full ownership and management permission. CNS owner can trade the name like a normal NFT.
 
 **Our Vision**
 
