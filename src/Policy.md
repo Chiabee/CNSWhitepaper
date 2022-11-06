@@ -2,7 +2,7 @@
 
 Names in CNS follow the convention: 
 
-```
+```text
 <name>.<domain-suffix>
 ```
 
