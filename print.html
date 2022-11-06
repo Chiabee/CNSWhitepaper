@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Chia Name Service White Paper</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">8.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">9.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">10.</strong> Back Cover</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Chia Name Service White Paper</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p align="right">
+  <a href="https://xch.cool"><img src="cns.jpg" alt="cns" width="120" /></a>
+</p>
+<section style="margin-top: 40vh; margin-left: 10vw;">
+    <h1 style="font-size: 2em;">Chia Name Service White Paper</h1>
+    <h2 style="margin-top: -0.8em; font-weight: normal; color: #888">Draft v0.1</h2>
+    <p style="margin-top: 4em;">October 2022</p>
+</section><div style="break-before: page; page-break-before: always;"></div><h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<h2 id="about"><a class="header" href="#about">About</a></h2>
+<p>Chia Name Service (CNS) is a decentralized ecosystem built on Chia Blockchain with its UTXO model and Chialisp Smart Contracts. CNS not only aims to provide name service to users on Chia Blockchain, but also provides cross-chain service with verifiable proof from the most secured blockchain - Chia.</p>
+<p>CNS generates the name with the <code>.xch</code> suffix, the name is able to resolve various types of data both on-chain or off-chain, including addresses, content, websites, social accounts, etc. Owners have full ownership and management permission. CNS owner can trade the name like a normal NFT.</p>
+<p><strong>Our Vision</strong></p>
+<p>CNS is a universal name service that seamlessly connects people, information, assets, and applications in the digital world. Although it is secured by Chia Blockchain, it is chain-agnostic. The CNS is a decentralized, censorship-resistant, and open-sourced digital gateway to Web 3.0.</p>
+<p><strong>Our Goals</strong></p>
+<ul>
+<li>Realize a secure, transparent, and open-name service.</li>
+<li>Serve as a digital gateway for a person or an organization to Web 3.0.</li>
+<li>Interoperate between Web 3.0 and the Web 2.0.</li>
+<li>Build a universal name service for all digital worlds.</li>
+</ul>
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<ul>
+<li><strong>Domain Name</strong>.
+Allow users to register a single unique domain name for easy memory and access.
+Domain names can be registered, modified, queried, and transacted on-chain.</li>
+<li><strong>NFT</strong>.
+CNS is recorded on the chain in the form of NFT, which can be easily queried and interacted with by any application or user.
+CNS is unique and indivisible and can be transacted and circulated as the NFT in the marketplace.
+The attribute of the domain can always be modified by the owner, others have no chance to manipulate it.
+The attribute can be modified by any compatible wallet/client.</li>
+<li><strong>Digital Gateway</strong>.
+The CNS can store a collection of personal identity data, and represent the unique identity of Web3.
+Different digital assets can be linked to the CNS, allowing it to become a unique gateway to multi-chain networks.
+Subdomains can be created for members of the company, community, or organization as validate credentials.
+By integrating multi-chain data and even the legacy network data in a single place, the Digital Gateway of Web 3.0 to all your assets is formed.</li>
+</ul>
+<h2 id="use-case"><a class="header" href="#use-case">Use case</a></h2>
+<ul>
+<li><strong>Simplified Payments</strong>
+Instead of having to remember someone’s Chia wallet address, you can easily send them a payment just by knowing their domain name. CNS  implements a smart contract that will resolve the chosen domain to the correct address on the blockchain and issue the payment.</li>
+<li><strong>Custom Information Storage</strong>
+Users can store arbitrary custom information (in the form of key-value pairs) with their domain on the blockchain. This can be useful, for example, if they wish to provide publicly available contact information, such as their email, Twitter handle, etc.</li>
+<li><strong>Subdomains</strong>
+Owners of domains can mint subdomains which offer even more ability for customization. For example, businesses can have several payment addresses and a unique subdomain linked to each one of them. For regular orders they might use <code>pay.business.cns</code> and for express delivery <code>express-pay.business.cns</code>. Another example of subdomain usage would be for displaying different website content, like the <code>blog. cns</code> for blog posts and <code>contact.blog.cns</code> to show additional contact information.</li>
+</ul>
+<h2 id="domains-in-blockchain"><a class="header" href="#domains-in-blockchain">Domains in Blockchain</a></h2>
+<h3 id="ethereum-name-service"><a class="header" href="#ethereum-name-service">Ethereum Name Service</a></h3>
+<p>On the Ethereum blockchain, Ethereum Name Service is the most notable name service. The main smart contract is called the Registry, which contains a mapping from domain names to their Resolvers. Each Resolver is another smart contract, which maps domain names to their actual records (for example Ethereum addresses or content hashes). Therefore, to resolve a domain, one first has to look up the correct Resolver in the Registry and then perform the actual resolution. Since Ethereum often has periods of very high transaction traffic, which leads to extreme transaction fees, Ethereum-based projects inevitably inherit these drawbacks.</p>
+<h3 id="fio-protocol"><a class="header" href="#fio-protocol">FIO protocol</a></h3>
+<p>The FIO Protocol is a decentralized service layer that bridges the gap between crypto endpoints such as wallets, exchanges, crypto payment processors, and any other application in which crypto assets are held and/or transferred. The FIO Protocol reimagines and enables a better way of sending and receiving blockchain-based value, regardless of the wallet, exchange, token, or coin used. It is worth mentioning that FIO has its blockchain but only acts as a service layer independent of other public chains, which ensures the security of address data on the one hand and ensures that the domain name service is not disrupted by the public chain on the other.</p>
+<h3 id="bonfida"><a class="header" href="#bonfida">BONFIDA</a></h3>
+<p>BONFIDA is a decentralized name service build on the solana blockchain, which has a simple mission of providing a decentralized and yet affordable way to map domain names (represented as .sol) to on-chain data. Where on-chain data can be anything from a Solana (SOL) address to IPFS CID, images, text, and more.BONFIDA supports the domain name exchange in auction way.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="design"><a class="header" href="#design">Design</a></h1>
+<h2 id="principles"><a class="header" href="#principles">Principles</a></h2>
+<h3 id="name-principles"><a class="header" href="#name-principles">Name Principles</a></h3>
+<p>According to Zooko's triangle, the name should follow:</p>
+<ol>
+<li>Human-meaningful, names can be meaningful and memorable to humans.</li>
+<li>Secure, as long as the Chia Blockchain Consensus is concrete, the CNS can survive various attacks.</li>
+<li>Decentralised, every entity can start its resolver service without any central authority.</li>
+</ol>
+<h3 id="everything-on-chain-non-custody"><a class="header" href="#everything-on-chain-non-custody">Everything On-Chain, Non-custody</a></h3>
+<ol>
+<li>All critical information is On-Chain, non-custody.</li>
+<li>Every domain is an NFT, and can be transferred and exchanged.</li>
+<li>Owner of the domain can change the domain reference address afterward, and these changes are also On-Chain.</li>
+<li>Protocol is open, you can register, update and exchange in a compatible wallet. </li>
+</ol>
+<h3 id="resolver"><a class="header" href="#resolver">Resolver</a></h3>
+<ol start="4">
+<li>The Off-Chain resolver will provide a quick domain resolving service.</li>
+<li>Every resolved result can be verified in every full node(by retrieving and parsing an NFT coin's puzzle and solution), Or theoretically by an SPV protocol and even a ZKP protocol. This can avoid malicious resolver attacks and MITM attacks.</li>
+<li>Resolver would respond not only to the address itself but also come with some critical information(like how long the reference address is stable, which can be done easily by confirmed_index of the domain NFT).</li>
+<li>Resolver is decentralized, even if we disappear, another team can take up the role and provide the resolving service by collecting information from the On-Chain information.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="lifecycle"><a class="header" href="#lifecycle">Lifecycle</a></h2>
+<pre><code class="language-mermaid">stateDiagram-v2
+    direction LR
+    Available
+    Grace: Grace Period
+    Decaying: Decaying Period
+    Available --&gt; Leased : Register
+    Leased --&gt; Grace : Expire
+    Grace --&gt; Leased : Reclaimed
+    Grace --&gt; Decaying : Over
+    Decaying --&gt; Available : Over
+    Decaying --&gt; Leased : Register
+</code></pre>
+<p><strong>Available Domains</strong></p>
+<p>Domains that are available can be immediately leased. Users will be required to pay leasing fees for one or more years. Leasing fees will be dependent on the length of the domain name.</p>
+<p><strong>Leased Domains</strong></p>
+<p>Leased domains will be represented by ERC721 tokens. The owner of the token will be able to top up leasing fees, transfer the token, and make use of the token (i.e. by using the naming system).</p>
+<p><strong>Grace Period</strong></p>
+<p>If the registration of a leased domain expires, the domain will enter into a grace period. During this grace period, the owner of the domain will not be able to perform any actions using the token (e.g. setting records on the domain, transferring the domain, etc.). The owner will have the option of reclaiming the domain by paying the lease fees on the domain during this period.</p>
+<p><strong>Decaying Period</strong></p>
+<p>If an expired domain is not reclaimed during the grace period, it will enter into the Recycling Period. During this period, an auction is used to re-distribute the domain. </p>
+<h3 id="registration"><a class="header" href="#registration">Registration</a></h3>
+<p>CNS domain names will be assigned through <strong>retention</strong>, <strong>public registration</strong>.</p>
+<ul>
+<li>The domain name of an important website will be retained for three years, and domain holders can verify the domain through their domain name certificate in a private manner.</li>
+<li>Domain names with 7 or more letters are open for public registration on a first-come-first-served basis.</li>
+</ul>
+<p>To use the domain name, users must register a domain. Domain registration is a Chia NFT with some special properties:</p>
+<ul>
+<li>Domain registrations always have expiry dates. To keep a domain, users must make sure to renew the domain before it expires.</li>
+<li>Expired domains are sold at auction. Expired names that are not sold at auction can be registered by others.</li>
+</ul>
+<h3 id="renewal"><a class="header" href="#renewal">Renewal</a></h3>
+<ul>
+<li>The renewal cycle is year based.</li>
+<li>Names have a minimum registration period of 1 year, and the maximum period is 10 years.</li>
+</ul>
+<h3 id="expiry"><a class="header" href="#expiry">Expiry</a></h3>
+<ul>
+<li>If the domain name is not renewed by the expiration date, the name will enter a renewal grace period of 90 days, the user can renew it within such period.</li>
+<li>During the renewal grace period, the name would be invalid, and all modifications to it would be ignored.</li>
+</ul>
+<p>carried out the “decaying price premium” [10], where the price of expired names will start at $2,000
+combining with normal annual rent and will decrease linearly to normal annual rent in 28 days.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="policy"><a class="header" href="#policy">Policy</a></h2>
+<p>Names in CNS follow the convention: </p>
+<pre><code class="language-text">&lt;name&gt;.&lt;domain-suffix&gt;
+</code></pre>
+<p>For example, hiya.xch or icer.xch
+Each field is explained below:</p>
+<ul>
+<li><strong>Domain Suffix</strong>.
+The domain suffix (such as .xch) identifies the registry to which the name belongs.</li>
+<li><strong>Name</strong>.
+Name is the main identifier that accepts numbers, letters (case insensitive), _(underscore), -(dash).</li>
+</ul>
+<p>Emoji will be transformed into Unicode, for example, 😊 = 567890 = xn-567890，thus 😊.xch is equivalent to xn-567890.xch.</p>
+<h3 id="retention-mechanism"><a class="header" href="#retention-mechanism">Retention mechanism</a></h3>
+<p>In order to prevent scammers, it was decided to add a safeguard mechanism by preserving some domains for people who might be at risk of being impersonated.</p>
+<p>The domain name of an important website will be retained for three years, and domain holders can verify the domain through their domain name certificate in a private manner, and the retained domain names are as follows:</p>
+<p>TODO:</p>
+<ul>
+<li>All country names (including abbreviations)</li>
+<li>Top 500 city names in the world</li>
+<li>Top 100 projects on CoinMarketCap</li>
+<li>Names in the list of Alexa top 100,000[alexa] domains are also pre-reserved for further inclusion of existing stakeholders (with deduplication and common words down to above 80,000 names). The latter names are converted to top-level domains by selecting their first domain name label.</li>
+</ul>
+<p><strong>These domains will appear as “RESERVED BY ChiaNameService”</strong></p>
+<h3 id="subdomains"><a class="header" href="#subdomains">Subdomains</a></h3>
+<h3 id="nft"><a class="header" href="#nft">NFT</a></h3>
+<p>NFT compatibility</p>
+<p>Domain NFT is full compatible with Chia NFTv1, and can be traded, exchanged, transferred, and modified. </p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="technical-architecture"><a class="header" href="#technical-architecture">Technical Architecture</a></h1>
+<p><img src="architecture.drawio.svg" alt="" /></p>
+<ul>
+<li>Full Node 全节点。用来实时获取Chia区块链上的数据。</li>
+<li>Syncer 同步器。用来将全节点上的数据进行实时分析，并存入数据库备查。</li>
+<li>Resolver 解析器。接受用户的域名解析请求，提供域名解析的结果。</li>
+<li>Registrar 注册器。接受用户的注册请求，提供注册域名的NFT Offer。确定域名合法性的核心私钥存在此处，需高安全级别的保护。</li>
+<li>Pawket 钱包。用户的区块链终端，可以进行去中心化的注册、解析、验证、更新和交易工作。</li>
+<li>xch.cool 概况网页。通过该网站的个性化网页可以看到账户所拥有的NFT、CAT、XCH等资产信息。</li>
+</ul>
+<h2 id="钱包的功能"><a class="header" href="#钱包的功能">钱包的功能</a></h2>
+<ul>
+<li>注册：向注册器提交注册请求，如果该域名可用，则可以获得该域名的的NFT Offer，在钱包签名后直接向全节点发送交易完成注册。</li>
+<li>解析：向解析器发起解析请求，提供域名获取对应的基本信息及NFT硬币信息。</li>
+<li>验证：根据解析时获取的NFT硬币信息，通过全节点进行验证，验证1）该硬币为合法有效的域名NFT；2）与解析信息一致。</li>
+<li>更新：构造更新NFT的交易信息，并提交至全节点上链。</li>
+<li>交易：域名NFT全兼容正常的NFT，可以在所有能做NFT交易的市场上进行交易。</li>
+</ul>
+<h2 id="analytic-db"><a class="header" href="#analytic-db">Analytic DB</a></h2>
+<p>::: mermaid
+erDiagram
+sync_coin_class {
+bigint id PK
+bytea coin_name
+bytea puzzle
+json parsed_puzzle
+bytea solution
+text mods
+json analysis
+}
+sync_block {
+bigint id PK
+bool is_tx_block
+bigint index
+bigint weight
+bigint iterations
+bigint cost
+bigint fee
+bytea generator
+bytea generator_ref_list
+json block_info
+bool tx_parsed
+}
+:::</p>
+<p>::: mermaid
+erDiagram
+ext_singleton_record {
+bigint id PK
+bigint last_coin_class_id
+bytea singleton_coin_name
+int singleton_create_index
+bytea bootstrap_coin_name
+bytea creator_puzzle_hash
+bytea creator_did
+text type
+}
+ext_singleton_history {
+bigint id PK
+bigint coin_class_id
+bytea singleton_coin_name
+bytea this_coin_name
+int this_coin_spent_index
+bytea next_coin_name
+bytea p2_owner
+bytea did_owner
+text type
+}
+:::</p>
+<ul>
+<li>type: &quot;CatV2&quot; | &quot;DidV1&quot; | &quot;NftV1&quot;</li>
+</ul>
+<h2 id="接口定义"><a class="header" href="#接口定义">接口定义</a></h2>
+<h3 id="resolver-1"><a class="header" href="#resolver-1">Resolver</a></h3>
+<ul>
+<li>API: /resolve
+<ul>
+<li>Request:
+<ul>
+<li>queries: array
+<ul>
+<li>name: string 域名</li>
+<li>type: string 解析类型，目前只支持<code>address</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Response:
+<ul>
+<li>answers: array
+<ul>
+<li>name: string 解析的域名</li>
+<li>type: string 解析类型</li>
+<li>time_to_live: number 域名的更新周期</li>
+<li>data: string 解析的内容，每种类型不一样，<code>address</code>对应绑定的xch地址</li>
+<li>proof_coin_name: string 证明解析结果的硬币名称，即该NFT UTXO的父硬币</li>
+<li>proof_coin_spent_index: number 包含证明解析结果硬币区块的高度</li>
+<li>nft_coin_name: string 该域名的NFT名称</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="registrar"><a class="header" href="#registrar">Registrar</a></h3>
+<ul>
+<li>
+<p>API: /register</p>
+<ul>
+<li>Request:
+<ul>
+<li>name: string 域名</li>
+<li>address: string 绑定的xch地址</li>
+<li>content_hash: string 验证内容的哈希【暂未开放】</li>
+<li>text: string 任意文字内容【暂未开放】</li>
+<li>dns: string DNS记录【暂未开放】</li>
+<li>pk: string 公钥信息【暂未开放】</li>
+</ul>
+</li>
+<li>Response:
+<ul>
+<li>name: string 域名</li>
+<li>offer: string 注册域名的offer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Register Offer Coins</p>
+<ul>
+<li>Bootstrap Coin -&gt; Launcher Coin</li>
+<li>Launcher Coin (Singleton Coin) -&gt; NFT Hint Coin</li>
+<li>NFT Hint Coin -&gt; Settlement Payment(NFT)</li>
+<li>Settlement Payment(XCH) -&gt; Registrar Address</li>
+</ul>
+</li>
+</ul>
+<h2 id="name-registration"><a class="header" href="#name-registration">Name Registration</a></h2>
+<p>As shown in the above figure, the name registration process involves 5 major steps:
+Generate Logic Signature
+The desired name is used as input to a standardized TEAL program and compiled, thereby creating a Logic Signature from the resulting TEAL program.
+Pay Name Registration fee to the escrow address
+The user must pay the name registration fee to the smart contract's escrow account. The total price is dependent on the length of the name and the desired number of years.
+Fund Logic Signature
+In order to be able to opt-in to Registry Smart Contract, the Logic Signature must possess 1.2 ALGOs. To meet this requirement, the Logic Signature account is first funded from the future name owner's wallet.
+Opt-In to Registry Smart Contract
+Once the Logic Signature representing the desired name is funded with the required minimum balance, an Opt-In transaction is processed to allow the Logic Signature account to be able to allocate local storage on the Name Registry smart contract. This transaction is signed and sent using the Logic Signature account.
+Add Owner's Address
+After opting-in to the Name Registry smart contract, the name owner adds their wallet address as the owner of the name by adding a local storage byte key-value. The name owner mentions Logic Signature account address in the accounts array of the transaction.</p>
+<h2 id="name-lookup"><a class="header" href="#name-lookup">Name Lookup</a></h2>
+<h2 id="name-transfer"><a class="header" href="#name-transfer">Name Transfer</a></h2>
+<h2 id="name-binding"><a class="header" href="#name-binding">Name Binding</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="registration-1"><a class="header" href="#registration-1">Registration</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="resolution"><a class="header" href="#resolution">Resolution</a></h2>
+<p>What is Forward Resolution?
+Let's say you want to send your friend 1 AVAX. Normally, you must ask for their wallet address (0x0000…), and then you can transfer to that address. Unfortunately, the address is difficult to remember.</p>
+<p>To simplify the process, you can use a domain name. Your friend can register johndoe.avax, and configure johndoe.avax to resolve to their wallet address. Then, you can transfer them funds knowing only their domain name.</p>
+<p>Read more about Forward Resolution and how to enable it. </p>
+<p>What is Reverse Resolution?
+Reverse Resolution is the process of taking a piece of data like a wallet address (0x0000…) and finding the related .avax domain.</p>
+<p>For example, if you are playing a GameFi game, you are likely identified by your wallet address. You can enable reverse resolution to allow users to find your .avax domain using your wallet address. With your .avax domain, the game can pull more information such as an avatar.</p>
+<p>Read more about Reverse Resolution and how to enable it.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="management"><a class="header" href="#management">Management</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="renewing"><a class="header" href="#renewing">Renewing</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="security"><a class="header" href="#security">Security</a></h1>
+<h2 id="deployment"><a class="header" href="#deployment">Deployment</a></h2>
+<ul>
+<li>Valid Registrar Address: TODO</li>
+<li>Fee Accountant Address: TODO</li>
+</ul>
+<h2 id="risk-mitigation"><a class="header" href="#risk-mitigation">Risk Mitigation</a></h2>
+<ol>
+<li>How to prevent/mitigate domain squatting.</li>
+<li>How to restrict or respect expiry policy (for the cost of a yearly renewal).</li>
+<li>How to verify a domain without a central authority. (the mechanism used by keybase can be a great inspiration.)</li>
+<li>When we need more metadata (maybe large) to be associated with the domain, how this metadata can be properly handled and stored?</li>
+<li>How we work with others to spread the usage of CNS and even integrated it into the Official Client.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="governance"><a class="header" href="#governance">Governance</a></h1>
+<h2 id="参与方式"><a class="header" href="#参与方式">参与方式</a></h2>
+<h3 id="为什么要参与能参与什么"><a class="header" href="#为什么要参与能参与什么">为什么要参与，能参与什么</a></h3>
+<h3 id="参与后可以获得什么"><a class="header" href="#参与后可以获得什么">参与后可以获得什么</a></h3>
+<h2 id="治理"><a class="header" href="#治理">治理</a></h2>
+<h3 id="如何做治理"><a class="header" href="#如何做治理">如何做治理</a></h3>
+<h2 id="注册规则试行"><a class="header" href="#注册规则试行">注册规则（试行）</a></h2>
+<ul>
+<li>试运行期间，您的注册期默认为一年期；且目前仅支持注册6位字符及以上的CNS。</li>
+<li>试运行期间，如果您的CNS到期，可以选择续期；同时，我们也将为您提供一段时间的宽限期。续费功能将陆续开放，敬请期待！</li>
+<li>注册的域名【不区分】大小写</li>
+</ul>
+<h2 id="销售规则试行"><a class="header" href="#销售规则试行">销售规则（试行）</a></h2>
+<ul>
+<li>
+<p>（<strong>ENS注册制</strong>）</p>
+<ul>
+<li>3个字节为等值700美元的XCH/年</li>
+<li>4个字节为等值200美元的XCH/年</li>
+<li>5个字节及以上的为等值20美元的XCH/年</li>
+</ul>
+</li>
+<li>
+<p>您通过Pawket钱包注册的CNS，在进行CNS的转让、交易时，我们将从中收取5%的版税。该费用将捐赠给Pawket开发团队，以便我们更好地为您提供服务。</p>
+</li>
+</ul>
+<details>
+<h2 id="开放注册方式时间"><a class="header" href="#开放注册方式时间">开放注册方式、时间</a></h2>
+<p>The CNS is available as a test version from now until December 31, 2023. We expect to go live with the beta version first in the third quarter of 2022, and then release the V1 version. The test version of the domain name registration does not require any fees, and the domain name will be reset at the end of the test, after which you can register the official CNS on the V1 version. V1 version is initially an invitation-based registration system, in the form of a whitelist (whitelist rules will be released later, please pay attention to our website and Twitter notification). We expect to gradually open public registration for V1 in Q4 2022.</p>
+<h2 id="registration-rules"><a class="header" href="#registration-rules">Registration Rules</a></h2>
+<ul>
+<li>
+<p>During the trial period, your registration period will be one year by default; and only CNSs with 6 characters and above are currently supported for registration.</p>
+</li>
+<li>
+<p>During the trial period, if your CNS expires, you can choose to renew; and we will also provide you with a grace period for a period of time. The renewal function will be opened one after another, so stay tuned!</p>
+</li>
+<li>
+<p>Registered domain names [not distinguishable] case</p>
+</li>
+<li>
+<p>If you register CNS through Pawket Wallet, we will charge 5% royalty when you transfer or trade CNS. This fee will be donated to the Pawket development team so that we can better serve you.</p>
+</li>
+</ul>
+</details><div style="break-before: page; page-break-before: always;"></div><h2 id="pricing"><a class="header" href="#pricing">Pricing</a></h2>
+<h3 id="registration-fee"><a class="header" href="#registration-fee">Registration Fee</a></h3>
+<p>Registration fee = registration cost + annual fee + miner fee</p>
+<h3 id="registration-cost"><a class="header" href="#registration-cost">Registration Cost</a></h3>
+<ul>
+<li>For names obtained through the retention and claim mechanism, a registration cost of 2000USD applied</li>
+<li>The registration cost for a domain name with 4-6 letters is fixed at 50 USD</li>
+<li>The registration cost for a domain name with 7 or more letters is fixed at 5 USD</li>
+<li>To avoid squatting, the released name would be starting at 2000USD and back to the original registration cost by 30 days linearly.</li>
+</ul>
+<h3 id="annual-fee"><a class="header" href="#annual-fee">Annual Fee</a></h3>
+<ul>
+<li>Short domain name with 4-6 letters: 50 USD/ per year</li>
+<li>Domain names with more than 7 letters: 5 USD/ per year</li>
+</ul>
+<h3 id="miner-fee"><a class="header" href="#miner-fee">Miner Fee</a></h3>
+<p>The Miner fee is determined according to the busy level of the blockchain, and it can be 0 when the blockchain is not busy and you are not urgent to compete with others to obtain the name.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="beyond"><a class="header" href="#beyond">Beyond</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
+<h2 id="can-i-list-my-domain-on-an-nft-exchange"><a class="header" href="#can-i-list-my-domain-on-an-nft-exchange">Can I list my domain on an NFT exchange?</a></h2>
+<p>If the NFT exchange supports the NFTv1 in Chia Blockchain, then you can list your domain on the exchange. Please follow the instructions on the exchange of your choice.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="about-us"><a class="header" href="#about-us">About Us</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><p align="center" style="margin-top: calc(50vh - 150px); margin-left: calc(50vw - 150px - 15px); float: left;">
+  <a href="https://xch.cool"><img src="cns.jpg" alt="cns" width="300" /></a>
+</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="mermaid.min.js"></script>
+        <script type="text/javascript" src="mermaid-init.js"></script>
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
