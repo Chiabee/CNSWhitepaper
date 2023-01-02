@@ -2,7 +2,7 @@
 
 Like in the DNS, in the CNS hierarchy, a subdomain is a domain that is a part of another (main) domain. For example, if a domain offered an alternative alias address for receiving donation as part of their main CNS `pawket.xch`, it might use the subdomain `donate.pawket.xch`.
 
-The CNS has a tree structure or hierarchy, which includes nodes on the tree being a domain name. A subdomain is a domain that is part of a larger domain. Each label may contain from 1 to 63 octets. The full domain name may not exceed a total length of 253 ASCII characters in its textual representation.
+The CNS has a tree structure or hierarchy, which includes nodes on the tree being a domain name. A subdomain is a domain that is part of a larger domain. Each label may contain from `1` to `63` octets. The full domain name may not exceed a total length of `253` ASCII characters in its textual representation.
 
 Different than traditional DNS, there are two ways to implement subdomains:
 
@@ -22,6 +22,8 @@ Owner of main domain without ownership of subdomain cannot:
 
 In this approach, a delegated resolver is acceptable, any on-chain resolver service could serve subdomain with/without fees.
 
+With this approach, main domain owner can issue the subdomain NFT with full customization ability, so the main domain owner can issue subdomain NFT with their own branding on the NFT image, or they can replace the traditional NFT with CNS NFT without losing any existing attribute, but with CNS merit.
+
 ## Non-NFT Approach (Offchain Resolver)
 
 CNS domain owner have full ownership of all these subdomains. Owner of main domain may:
@@ -36,5 +38,5 @@ In this approach, a dedicated resolver is required, some service provider may de
 
 | Approach | Pros | Cons|
 | --- | --- | ---|
-| NFT Approach | ✅Onchain verification<br>✅Reuse or delegate onchain resolver | ❌Cannot change ownership of subdomain<br>❌Cannot change bound property |
+| NFT Approach | ✅Onchain verification<br>✅Reuse or delegate onchain resolver<br>✅Customize NFT | ❌Cannot change ownership of subdomain<br>❌Cannot change bound property |
 | Non-NFT Approach | ✅Full ownership of subdomain | ❌No onchain verification<br>❌Dedicated offchain resolver needed |
