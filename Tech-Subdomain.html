@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Beyond - Chia Name Service White Paper</title>
+        <title>Subdomain - Chia Name Service White Paper</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li><li class="chapter-item expanded "><a href="Tech-Subdomain.html"><strong aria-hidden="true">4.5.</strong> Subdomain</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html" class="active"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">8.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">9.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">10.</strong> Back Cover</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li><li class="chapter-item expanded "><a href="Tech-Subdomain.html" class="active"><strong aria-hidden="true">4.5.</strong> Subdomain</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">8.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">9.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">10.</strong> Back Cover</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,17 +141,49 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="beyond"><a class="header" href="#beyond">Beyond</a></h1>
-
+                        <h1 id="subdomain"><a class="header" href="#subdomain">Subdomain</a></h1>
+<p>Like in the DNS, in the CNS hierarchy, a subdomain is a domain that is a part of another (main) domain. For example, if a domain offered an alternative alias address for receiving donation as part of their main CNS <code>pawket.xch</code>, it might use the subdomain <code>donate.pawket.xch</code>.</p>
+<p>The CNS has a tree structure or hierarchy, which includes nodes on the tree being a domain name. A subdomain is a domain that is part of a larger domain. Each label may contain from <code>1</code> to <code>63</code> octets. The full domain name may not exceed a total length of <code>253</code> ASCII characters in its textual representation.</p>
+<p>Different than traditional DNS, there are two ways to implement subdomains:</p>
+<ul>
+<li><strong>NFT Approach</strong>. Subdomains can be NFT as main domain does, and they will be valid if: The issuer address is the address bound to main domain. Also, this means the subdomain would be invalidated when main domain's bound address changed.</li>
+<li><strong>Non-NFT Approach</strong>. Subdomains work as resolver respond resolving result, and they will be valid if: The main domain bound a resolver address(A record or CNAME) to it, and the resolver resolves the corresponding subdomain.</li>
+</ul>
+<h2 id="nft-approach-onchain-resolver"><a class="header" href="#nft-approach-onchain-resolver">NFT Approach (Onchain Resolver)</a></h2>
+<p>CNS main domain owner only have issuer right over all these subdomains. Owner of main domain may:</p>
+<ul>
+<li>Invalidated all subdomains (NFT) at once by change the bound address of main domain.</li>
+</ul>
+<p>Owner of main domain without ownership of subdomain cannot:</p>
+<ul>
+<li>Change ownership of the subdomain</li>
+<li>Change any bound property including address of this subdomain</li>
+</ul>
+<p>In this approach, a delegated resolver is acceptable, any on-chain resolver service could serve subdomain with/without fees.</p>
+<p>With this approach, main domain owner can issue the subdomain NFT with full customization ability, so the main domain owner can issue subdomain NFT with their own branding on the NFT image, or they can replace the traditional NFT with CNS NFT without losing any existing attribute, but with CNS merit.</p>
+<h2 id="non-nft-approach-offchain-resolver"><a class="header" href="#non-nft-approach-offchain-resolver">Non-NFT Approach (Offchain Resolver)</a></h2>
+<p>CNS domain owner have full ownership of all these subdomains. Owner of main domain may:</p>
+<ul>
+<li>Invalidated all subdomains (NFT) at once by change the bound address of main domain.</li>
+<li>Change ownership of the subdomain</li>
+<li>Change any bound property including address of this subdomain</li>
+</ul>
+<p>In this approach, a dedicated resolver is required, some service provider may deliver a aggregated resolver service, but without onchain information, the resolver response cannot be validated by wallet client.</p>
+<h2 id="comparison"><a class="header" href="#comparison">Comparison</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Approach</th><th>Pros</th><th>Cons</th></tr></thead><tbody>
+<tr><td>NFT Approach</td><td>✅Onchain verification<br>✅Reuse or delegate onchain resolver<br>✅Customize NFT</td><td>❌Cannot change ownership of subdomain<br>❌Cannot change bound property</td></tr>
+<tr><td>Non-NFT Approach</td><td>✅Full ownership of subdomain</td><td>❌No onchain verification<br>❌Dedicated offchain resolver needed</td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="Pricing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="Tech-Renewing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="Faq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="Security.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -161,11 +193,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="Pricing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="Tech-Renewing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="Faq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="Security.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
