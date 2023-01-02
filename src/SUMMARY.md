@@ -13,6 +13,7 @@
     - [Resolution](./Tech-Resolution.md)
     - [Management](./Tech-Management.md)
     - [Renewing](./Tech-Renewing.md)
+    - [Subdomain](./Tech-Subdomain.md)
 - [Security](./Security.md)
 - [Governance](./Governance.md)
     - [Pricing](./Pricing.md)
