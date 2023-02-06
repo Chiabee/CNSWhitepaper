@@ -563,8 +563,174 @@ Reverse Resolution is the process of taking a piece of data like a wallet addres
 <p>The Miner fee is determined according to the busy level of the blockchain, and it can be 0 when the blockchain is not busy and you are not urgent to compete with others to obtain the name.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="beyond"><a class="header" href="#beyond">Beyond</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
-<h2 id="can-i-list-my-domain-on-an-nft-exchange"><a class="header" href="#can-i-list-my-domain-on-an-nft-exchange">Can I list my domain on an NFT exchange?</a></h2>
-<p>If the NFT exchange supports the NFTv1 in Chia Blockchain, then you can list your domain on the exchange. Please follow the instructions on the exchange of your choice.</p>
+<h2 id="before-registration"><a class="header" href="#before-registration">Before Registration</a></h2>
+<h3 id="what-is-cns"><a class="header" href="#what-is-cns">What is CNS?</a></h3>
+<ul>
+<li>CNS (Chia Name Service) is a decentralized domain name service built on the Chia blockchain. Use CNS to receive on-chain assets such as XCH, CATs, NFTs, etc. without copying and pasting lengthy and illegible addresses. Name format example: pawket.xch</li>
+</ul>
+<h3 id="is-cns-only-for-storing-a-chia-address"><a class="header" href="#is-cns-only-for-storing-a-chia-address">Is CNS only for storing a Chia address?</a></h3>
+<ul>
+<li>In addition to binding Chia addresses, CNS can also bind other information such as public key, DID, and text. In the future, social accounts such as Email and Twitter may be supported.</li>
+</ul>
+<h3 id="can-i-use-a-cns-name-to-point-to-my-website"><a class="header" href="#can-i-use-a-cns-name-to-point-to-my-website">Can I use a CNS name to point to my website?</a></h3>
+<ul>
+<li>Pointing to other websites is not supported for now.</li>
+<li>However, CNS has its own profile homepage (name.xch.cool, eg <a href="https://pawket.xch.cool/">pawket.xch.cool</a>), which will display your NFT assets, transaction history, etc. In the future, it will support custom decoration of your profile homepage.</li>
+</ul>
+<h3 id="what-is-the-length-range-for-registering-a-cns-name"><a class="header" href="#what-is-the-length-range-for-registering-a-cns-name">What is the length range for registering a CNS name?</a></h3>
+<ul>
+<li>Registration of names within the range of 6 ~ 63 characters is currently supported.</li>
+<li>6 characters or less are temporarily unavailable.</li>
+<li>More than 63 characters will not be opened.</li>
+</ul>
+<h3 id="how-much-does-it-cost-to-register-a-cns-name"><a class="header" href="#how-much-does-it-cost-to-register-a-cns-name">How much does it cost to register a CNS name?</a></h3>
+<ul>
+<li>The fee is divided into registration fee (needed to pay for first registration) and service fee (charged annually).
+<ul>
+<li>CNS is priced in USD and paid in XCH.</li>
+<li>7 characters and above: 0 registration fee + $6 service fee/year;</li>
+<li>6 characters: $6 registration fee + $10 service fee/year.</li>
+</ul>
+</li>
+</ul>
+<h3 id="can-i-register-a-name-other-than-xch"><a class="header" href="#can-i-register-a-name-other-than-xch">Can I register a name other than .xch?</a></h3>
+<ul>
+<li>Only .xch names are currently supported for registration.</li>
+</ul>
+<h2 id="when-registering"><a class="header" href="#when-registering">When Registering</a></h2>
+<h3 id="what-are-the-rules-to-register-a-name"><a class="header" href="#what-are-the-rules-to-register-a-name">What are the rules to register a name?</a></h3>
+<ul>
+<li>Letters, numbers, and hyphen &quot;-&quot; are supported, and the hyphen &quot;-&quot; cannot be used for the first 4 digits.</li>
+<li>Special symbols and emoji are not supported.</li>
+</ul>
+<h3 id="can-i-choose-the-registration-period-when-registering"><a class="header" href="#can-i-choose-the-registration-period-when-registering">Can I choose the registration period when registering?</a></h3>
+<ul>
+<li>Currently not supported, the current registration period can only choose one year.</li>
+</ul>
+<h3 id="do-i-have-to-bind-a-chia-address-when-registering"><a class="header" href="#do-i-have-to-bind-a-chia-address-when-registering">Do I have to bind a Chia address when registering?</a></h3>
+<ul>
+<li>If the binding address is not filled in during registration, the owner's address of the CNS will be bound by default, that is, the assets received with this name will enter the owner's address. After forwarding or trading to others, the binding address will be automatically updated to the new owner's address.</li>
+<li>If you fill in the binding address (which can be different from the holding address), the address will not change after forwarding or trading. The owner can modify the binding address.</li>
+</ul>
+<h3 id="do-i-have-to-add-fees"><a class="header" href="#do-i-have-to-add-fees">Do I have to add Fees?</a></h3>
+<ul>
+<li>It's up to you. Adding fees will speed up the transaction, and the transaction can be completed without adding fees. Fees are recommended during sandstorms.</li>
+</ul>
+<h3 id="after-payment-how-to-confirm-whether-the-registration-is-successful"><a class="header" href="#after-payment-how-to-confirm-whether-the-registration-is-successful">After payment, how to confirm whether the registration is successful?</a></h3>
+<ul>
+<li>You can check it in wallet NFT or blockchain explorer.</li>
+</ul>
+<h2 id="after-registration"><a class="header" href="#after-registration">After Registration</a></h2>
+<h3 id="how-to-addmodify-my-binding-information"><a class="header" href="#how-to-addmodify-my-binding-information">How to add/modify my binding information?</a></h3>
+<ul>
+<li>In the Pawket wallet, find the corresponding NFT, and click to add/modify in the Binding Information.</li>
+</ul>
+<h3 id="how-do-i-transfer-my-cns-to-someone-else"><a class="header" href="#how-do-i-transfer-my-cns-to-someone-else">How do I transfer my CNS to someone else?</a></h3>
+<ul>
+<li>In the Pawket wallet, find the corresponding NFT, click on it and select transfer, and you can also perform other transactions, such as selling, moving to DID, etc.</li>
+</ul>
+<h3 id="how-to-send-a-transaction-using-cns"><a class="header" href="#how-to-send-a-transaction-using-cns">How to send a transaction using CNS?</a></h3>
+<ul>
+<li>In the Pawket wallet, when sending a transaction, just enter the CNS name in the address bar.</li>
+</ul>
+<h3 id="how-to-renew"><a class="header" href="#how-to-renew">How to renew?</a></h3>
+<ul>
+<li>Under development, stay tuned.</li>
+</ul>
+<h3 id="how-to-unregister-my-cns"><a class="header" href="#how-to-unregister-my-cns">How to unregister my CNS?</a></h3>
+<ul>
+<li>Not currently supported.</li>
+<li>Tips: 
+<ol>
+<li>If the binding address is cancelled in the binding information, it will be bound to the owner's address of the CNS NFT by default.</li>
+<li>If the NFT of CNS is burned (the NFT is sent to a verifiably unspendable address: xch1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqm6ks6e8mvy), the CNS cannot be deregistered.</li>
+</ol>
+</li>
+</ul>
+<h2 id="注册前"><a class="header" href="#注册前">注册前</a></h2>
+<h3 id="什么是-cns"><a class="header" href="#什么是-cns">什么是 CNS？</a></h3>
+<ul>
+<li>CNS（Chia Name Service）即 “Chia 域名服务”，在 Chia 区块链上构建的去中心化域名服务。无需复制粘贴冗长且难以辨认的地址，使用 CNS 即可接收 XCH、CAT、NFT 等链上资产。名字格式例：pawket.xch</li>
+</ul>
+<h3 id="cns-仅能存储-chia-地址吗"><a class="header" href="#cns-仅能存储-chia-地址吗">CNS 仅能存储 Chia 地址吗？</a></h3>
+<ul>
+<li>CNS 除可以绑定 Chia 地址外，还可以绑定公钥、DID、文本等其他信息。未来可能会支持绑定电子邮箱、Twitter 等社交账户。</li>
+</ul>
+<h3 id="我可以使用一个-cns-名字来指向我的网站吗"><a class="header" href="#我可以使用一个-cns-名字来指向我的网站吗">我可以使用一个 CNS 名字来指向我的网站吗？</a></h3>
+<ul>
+<li>暂不支持指向其他网站。</li>
+<li>不过 CNS 拥有自己的个人主页（name.xch.cool，例 <a href="https://pawket.xch.cool/">pawket.xch.cool</a>），将展示你的 NFT 资产、交易历史等。未来将支持自定义装修你的个人主页。</li>
+</ul>
+<h3 id="注册-cns-名字的长度范围是多少"><a class="header" href="#注册-cns-名字的长度范围是多少">注册 CNS 名字的长度范围是多少？</a></h3>
+<ul>
+<li>当前支持 6 ~ 63 个字符范围内的名字的注册。</li>
+<li>6 个字符以下暂不开放。</li>
+<li>63 个字符以上不开放。</li>
+</ul>
+<h3 id="注册一个-cns-需要多少钱"><a class="header" href="#注册一个-cns-需要多少钱">注册一个 CNS 需要多少钱？</a></h3>
+<ul>
+<li>注册时费用分为注册费（首次注册需要支付注册费）和服务费（按年收取）。
+<ul>
+<li>CNS 售价以美元为标准，收取 XCH。</li>
+<li>7 字符及以上：0 注册费 + $6 服务费/年；</li>
+<li>6 字符：$6 注册费 + $10 服务费/年。</li>
+</ul>
+</li>
+</ul>
+<h3 id="可以注册除-xch-以外的名字吗"><a class="header" href="#可以注册除-xch-以外的名字吗">可以注册除 .xch 以外的名字吗？</a></h3>
+<ul>
+<li>目前仅支持注册 .xch 名字。</li>
+</ul>
+<h2 id="注册时"><a class="header" href="#注册时">注册时</a></h2>
+<h3 id="注册名称的规则是什么"><a class="header" href="#注册名称的规则是什么">注册名称的规则是什么？</a></h3>
+<ul>
+<li>支持字母、数字、连字符“-”，前 4 位不能使用连字符“-”。</li>
+<li>不支持特殊符号和表情符号。</li>
+</ul>
+<h3 id="注册时可以选择注册期限吗"><a class="header" href="#注册时可以选择注册期限吗">注册时可以选择注册期限吗？</a></h3>
+<ul>
+<li>暂不支持，目前注册期限仅可选择一年。</li>
+</ul>
+<h3 id="注册时一定要绑定一个-chia-地址吗"><a class="header" href="#注册时一定要绑定一个-chia-地址吗">注册时一定要绑定一个 Chia 地址吗？</a></h3>
+<ul>
+<li>若注册时，没有填写绑定地址，则默认绑定 CNS 的持有者地址，即使用该名字接收的资产会进入持有者地址；转发或交易给他人后，绑定地址将自动更新为新的持有者地址。</li>
+<li>若填写了绑定地址（可与持有地址不同），转发或交易后，该地址不发生改变，持有者可修改。</li>
+</ul>
+<h3 id="一定要加-fee-吗"><a class="header" href="#一定要加-fee-吗">一定要加 Fee 吗？</a></h3>
+<ul>
+<li>可不加。加 Fee 会加快交易速度，在沙尘暴期间建议加 Fee。</li>
+</ul>
+<h3 id="付款后怎么确认是否注册成功"><a class="header" href="#付款后怎么确认是否注册成功">付款后，怎么确认是否注册成功？</a></h3>
+<ul>
+<li>可在钱包 NFT 或者区块链浏览器中查看。</li>
+</ul>
+<h2 id="注册后"><a class="header" href="#注册后">注册后</a></h2>
+<h3 id="如何添加修改我的绑定信息"><a class="header" href="#如何添加修改我的绑定信息">如何添加/修改我的绑定信息？</a></h3>
+<ul>
+<li>在 Pawket 钱包中，找到对应 NFT，点开后在绑定信息中添加/修改。</li>
+</ul>
+<h3 id="如何将我的-cns-转发给别人"><a class="header" href="#如何将我的-cns-转发给别人">如何将我的 CNS 转发给别人？</a></h3>
+<ul>
+<li>在 Pawket 钱包中，找到对应 NFT，点开后选择转发，也可执行其他交易，如出售、移动至 DID 等。</li>
+</ul>
+<h3 id="如何使用-cns-发起一笔交易"><a class="header" href="#如何使用-cns-发起一笔交易">如何使用 CNS 发起一笔交易？</a></h3>
+<ul>
+<li>在 Pawket 钱包中，发起交易时，在地址栏输入 CNS 名字即可。</li>
+</ul>
+<h3 id="如何续期"><a class="header" href="#如何续期">如何续期？</a></h3>
+<ul>
+<li>开发中，敬请期待。</li>
+</ul>
+<h3 id="如何注销我的-cns"><a class="header" href="#如何注销我的-cns">如何注销我的 CNS？</a></h3>
+<ul>
+<li>暂不支持注销。</li>
+<li>提示：
+<ol>
+<li>若在绑定信息中将绑定地址取消，将默认绑定至 CNS NFT 的持有者地址。</li>
+<li>若将 CNS 的 NFT 销毁（将 NFT 发送到一个可验证的不可花费地址xch1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqm6ks6e8mvy），无法注销 CNS。</li>
+</ol>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="about-us"><a class="header" href="#about-us">About Us</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><p align="center" style="margin-top: calc(50vh - 150px); margin-left: calc(50vw - 150px - 15px); float: left;">
   <a href="https://xch.cool"><img src="cns.jpg" alt="cns" width="300" /></a>
