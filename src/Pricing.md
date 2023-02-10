@@ -1,22 +1,59 @@
-## Pricing
+# The Total Cost of Registration
+- The total cost of registration includes: registration fee (registration fee is required for the first registration) + annual fee (charged annually) + royalties
+- The price of CNS is priced in USD and XCH is paid. Therefore, if the currency price fluctuates significantly, we will adjust the XCH amount.
 
-### Registration Fee
+## Registration Fee
+- 7+ characters: 0
+- 6 characters: $6 in XCH
+- Not available below 6 characters
 
-Registration fee = registration cost + annual fee + miner fee
+## Annual Fee
+- 7+ characters: $6 in XCH per year
+- 6 characters: $10 in XCH per year
+- Not available below 6 characters
 
-### Registration Cost
+## Royalty
+- The royalty percentage is 5%.
 
-- For names obtained through the retention and claim mechanism, a registration cost of 2000USD applied
-- The registration cost for a domain name with 4-6 letters is fixed at 50 USD
-- The registration cost for a domain name with 7 or more letters is fixed at 5 USD
-- To avoid squatting, the released name would be starting at 2000USD and back to the original registration cost by 30 days linearly.
+## Example: (when XCH price is $40)
+1. Total registration cost for 7+ characters:
+    - Registration fee: 0
+    - Annual fee: 0.15 XCH
+    - Royalty: 0.0075 XCH (0.15 × 5%)
+    - Total: 0.1575 XCH
 
-### Annual Fee
+1. Total registration cost for 6 characters:
+    - Registration fee: 0.15 XCH
+    - Annual fee: 0.25 XCH
+    - Royalty: 0.02 XCH ((0.15+0.25)×5%)
+    - Total: 0.42 XCH
 
-- Short domain name with 4-6 letters: 50 USD/ per year
-- Domain names with more than 7 letters: 5 USD/ per year
+# 注册总费用
+- 注册总费用包括：注册费（首次注册需要支付注册费） + 年费（服务费） + 版税
+- CNS 售价以美元为标准，收取 XCH，因此如果币价有大幅度波动，我们会调整 XCH 售价。
 
-### Miner Fee
+## 注册费
+- 7 字符及以上：0
+- 6 字符：6 美元
+- 6 字符以下暂不开放
 
-The Miner fee is determined according to the busy level of the blockchain, and it can be 0 when the blockchain is not busy and you are not urgent to compete with others to obtain the name.
+## 年费
+- 7 字符及以上：6 美元/年
+- 6 字符：10 美元/年
+- 6 字符以下暂不开放
 
+## 版税
+- 版税百分比为 5%。
+
+## 例：（当 XCH 价格为 40 美元时）
+1. 7 字符及以上注册时需支付费用：
+   - 注册费：0
+   - 年费：0.15 XCH
+   - 版税：0.0075 XCH（0.15 × 5%）
+   - 合计：0.1575 XCH
+
+1. 6 字符注册时需支付费用：
+   - 注册费：0.15 XCH
+   - 年费：0.25 XCH
+   - 版税：0.02 XCH（（0.15+0.25）×5%）
+   - 合计：0.42 XCH
