@@ -1,16 +1,16 @@
 # The Total Cost of Registration
-- The total cost of registration includes: registration fee (registration fee is required for the first registration) + annual fee (charged annually) + royalties
+- The total cost of registration includes: registration fee (registration fee is required for the first registration) + annual fee (charged annually) + royalties.
 - The price of CNS is priced in USD and XCH is paid. Therefore, if the currency price fluctuates significantly, we will adjust the XCH amount.
 
 ## Registration Fee
-- 7+ characters: 0
-- 6 characters: $6 in XCH
-- Not available below 6 characters
+- 7+ characters: 0.
+- 6 characters: $6 in XCH.
+- Not available below 6 characters.
 
 ## Annual Fee
-- 7+ characters: $6 in XCH per year
-- 6 characters: $10 in XCH per year
-- Not available below 6 characters
+- 7+ characters: $6 in XCH per year.
+- 6 characters: $10 in XCH per year.
+- Not available below 6 characters.
 
 ## Royalty
 - The royalty percentage is 5%.
@@ -29,18 +29,18 @@
     - Total: 0.42 XCH
 
 # 注册总费用
-- 注册总费用包括：注册费（首次注册需要支付注册费） + 年费（服务费） + 版税
+- 注册总费用包括：注册费（首次注册需要支付注册费） + 年费（服务费） + 版税。
 - CNS 售价以美元为标准，收取 XCH，因此如果币价有大幅度波动，我们会调整 XCH 售价。
 
 ## 注册费
-- 7 字符及以上：0
-- 6 字符：6 美元
-- 6 字符以下暂不开放
+- 7 字符及以上：0；
+- 6 字符：6 美元；
+- 6 字符以下暂不开放。
 
 ## 年费
-- 7 字符及以上：6 美元/年
-- 6 字符：10 美元/年
-- 6 字符以下暂不开放
+- 7 字符及以上：6 美元/年；
+- 6 字符：10 美元/年；
+- 6 字符以下暂不开放。
 
 ## 版税
 - 版税百分比为 5%。
