@@ -3,11 +3,11 @@
 ## Preparation
 
 1. [Chia Client](https://www.chia.net/downloads/) or [Pawket](https://info.pawket.app/download/) wallet.
-3. Chia Name Service official website: https://xch.cool/
+3. Chia Name Service official website: [xch.cool](https://xch.cool/)
 
 ## Registration Steps
 
-1. Go https://xch.cool/ and search for a domain name. Currently only characters with 6 or more characters are supported(max 63 characters). The domain name is not case-sensitive and cannot contain special characters or emoji.
+1. Go [xch.cool](https://xch.cool/) and search for a domain name. Currently only characters with 6 or more characters are supported(max 63 characters). The domain name is not case-sensitive and cannot contain special characters or emoji.
    ![image](https://user-images.githubusercontent.com/90297530/218027708-6bf60e1c-772a-425c-9ee4-bf7f4c49e7bd.png)
 
 1. If the domain is available for registration, it will be displayed as `available`.
