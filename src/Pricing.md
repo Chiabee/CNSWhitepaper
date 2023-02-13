@@ -28,6 +28,10 @@
     - Royalty: 0.02 XCH ((0.15+0.25)×5%)
     - Total: 0.42 XCH
 
+## Disclaimer: 
+The above fees are for reference only. Due to the real-time fluctuations in the price of XCH, there may be some differences in the dollar valuation of the domain. We will make adjustments regularly to keep its dollar price around this level.
+
+
 # 注册总费用
 - 注册总费用包括：注册费（首次注册需要支付注册费） + 年费（服务费） + 版税。
 - CNS 售价以美元为标准，收取 XCH，因此如果币价有大幅度波动，我们会调整 XCH 售价。
@@ -57,3 +61,7 @@
    - 年费：0.25 XCH
    - 版税：0.02 XCH（（0.15+0.25）×5%）
    - 合计：0.42 XCH
+
+## 免责声明
+以上费用仅供参考。由于XCH币价实时波动，因此域名的美元计价可能存在一定差异。我们将定期进行调整，以使其美元价格保持在这个水平附近。
+
