@@ -6,7 +6,7 @@
 - CNS (Chia Name Service) is a decentralized domain name service built on the Chia blockchain. Use CNS to receive on-chain assets such as XCH, CATs, NFTs, etc. without copying and pasting lengthy and illegible addresses. Name format example: pawket.xch
 
 ### Which wallets currently support CNS?
-- Pawket.
+- Currently only [Pawket](https://info.pawket.app/download) wallet supports useing CNS instead of an address to send assets.
 
 ### Is CNS only for storing Chia addresses?
 - In addition to Chia addresses, CNS can also bind other information such as public key, DID, and text. In the future, social accounts such as Email and Twitter may be supported as well.
@@ -23,8 +23,8 @@
 ### How much does it cost to register a CNS name? 
 - The fee includes registration fee (needed to pay for the first registration) and service fee (charged annually).
   - CNS is priced in USD and paid in XCH.
-  - 7 characters and above: 0 registration fee + $6 service fee/year;
-  - 6 characters: $6 registration fee + $10 service fee/year.
+  - 7 characters and above: 0 registration fee + about $6 service fee/year;
+  - 6 characters: about $6 registration fee + $10 service fee/year.
   - Disclaimer:The above fees are for reference only. Due to the real-time fluctuations in the price of XCH, there may be some differences in the dollar valuation of the domain. We will make adjustments regularly to keep its dollar price around this level.
 
 ### Can I register a name other than .xch?
