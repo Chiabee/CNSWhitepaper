@@ -17,6 +17,7 @@
 - [Security](./Security.md)
 - [Governance](./Governance.md)
     - [Pricing](./Pricing.md)
+    - [Airdrop](./Airdrop.md)
 - [Beyond](./Beyond.md)
 
 --------------
