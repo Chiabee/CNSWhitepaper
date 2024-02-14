@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Lifecycle - Chia Name Service White Paper</title>
+        <title>Airdrop - Chia Name Service White Paper</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html" class="active"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li><li class="chapter-item expanded "><a href="Tech-Subdomain.html"><strong aria-hidden="true">4.5.</strong> Subdomain</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li><li class="chapter-item expanded "><a href="Airdrop.html"><strong aria-hidden="true">6.2.</strong> Airdrop</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">8.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">9.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">10.</strong> Back Cover</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li><li class="chapter-item expanded "><a href="Tech-Subdomain.html"><strong aria-hidden="true">4.5.</strong> Subdomain</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li><li class="chapter-item expanded "><a href="Airdrop.html" class="active"><strong aria-hidden="true">6.2.</strong> Airdrop</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">8.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">9.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">10.</strong> Back Cover</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,59 +134,16 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="lifecycle"><a class="header" href="#lifecycle">Lifecycle</a></h2>
-<pre class="mermaid">stateDiagram-v2
-    direction LR
-    Available
-    Grace: Grace Period
-    Decaying: Decaying Period
-    Available --&gt; Leased : Register
-    Leased --&gt; Grace : Expire
-    Grace --&gt; Leased : Reclaimed
-    Grace --&gt; Decaying : Over
-    Decaying --&gt; Available : Over
-    Decaying --&gt; Leased : Register
-</pre>
-<p><strong>Available Domains</strong></p>
-<p>Domains that are available can be immediately leased. Users will be required to pay leasing fees for one or more years. Leasing fees will be dependent on the length of the domain name.</p>
-<p><strong>Leased Domains</strong></p>
-<p>Leased domains will be represented by ERC721 tokens. The owner of the token will be able to top up leasing fees, transfer the token, and make use of the token (i.e. by using the naming system).</p>
-<p><strong>Grace Period</strong></p>
-<p>If the registration of a leased domain expires, the domain will enter into a grace period. During this grace period, the owner of the domain will not be able to perform any actions using the token (e.g. setting records on the domain, transferring the domain, etc.). The owner will have the option of reclaiming the domain by paying the lease fees on the domain during this period.</p>
-<p><strong>Decaying Period</strong></p>
-<p>If an expired domain is not reclaimed during the grace period, it will enter into the Recycling Period. During this period, an auction is used to re-distribute the domain. </p>
-<h3 id="registration"><a class="header" href="#registration">Registration</a></h3>
-<p>CNS domain names will be assigned through <strong>retention</strong>, <strong>public registration</strong>.</p>
-<ul>
-<li>The domain name of an important website will be retained for three years, and domain holders can verify the domain through their domain name certificate in a private manner.</li>
-<li>Domain names with 7 or more letters are open for public registration on a first-come-first-served basis.</li>
-</ul>
-<p>To use the domain name, users must register a domain. Domain registration is a Chia NFT with some special properties:</p>
-<ul>
-<li>Domain registrations always have expiry dates. To keep a domain, users must make sure to renew the domain before it expires.</li>
-<li>Expired domains are sold at auction. Expired names that are not sold at auction can be registered by others.</li>
-</ul>
-<h3 id="renewal"><a class="header" href="#renewal">Renewal</a></h3>
-<ul>
-<li>The renewal cycle is year based.</li>
-<li>Names have a minimum registration period of 1 year, and the maximum period is 10 years.</li>
-</ul>
-<h3 id="expiry"><a class="header" href="#expiry">Expiry</a></h3>
-<ul>
-<li>If the domain name is not renewed by the expiration date, the name will enter a renewal grace period of 90 days, the user can renew it within such period.</li>
-<li>During the renewal grace period, the name would be invalid, and all modifications to it would be ignored.</li>
-</ul>
-<p>carried out the “decaying price premium” [10], where the price of expired names will start at $2,000
-combining with normal annual rent and will decrease linearly to normal annual rent in 28 days.</p>
+                        <h1 id="airdrop"><a class="header" href="#airdrop">Airdrop</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="Design.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="Pricing.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="Policy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="Beyond.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -195,10 +152,10 @@ combining with normal annual rent and will decrease linearly to normal annual re
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="Design.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="Pricing.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="Policy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="Beyond.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
