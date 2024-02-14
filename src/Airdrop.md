@@ -36,7 +36,7 @@ Breakdown of CNS sales revenue:
 
 
 ## CNS Token Distribution:
-We have launched our token CNS (AssetID:`ba36df73e5f4ddd5c298bba7030678ebc1bbc5d4431663cffd0747099f81d8bb`), with an inaugural supply of 100,000,000 tokens. These tokens are aimed at driving the governance and propelling incentives within the CNS ecosystem. CNS token holders can participate in governance voting, or engage in strategies like staking and liquidity provision to earn rewards.
+We have launched our token CNS (AssetID:`ba36df73e5f4ddd5c298bba7030678ebc1bbc5d4431663cffd0747099f81d8bb`), with an initial supply of 100,000,000 tokens. These tokens are aimed at driving the governance and propelling incentives within the CNS ecosystem. CNS token holders can participate in governance voting, or engage in strategies like staking and liquidity provision to earn rewards.
 
 The token distribution plan is as follows:
 
