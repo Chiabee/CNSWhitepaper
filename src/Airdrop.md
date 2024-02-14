@@ -56,7 +56,7 @@ Starting this year, we will conduct multiple rounds of airdrops. The first round
 - CNS registered users - based on the addresses bound with CNS domain names (by default, bound addresses are domain name holding addresses).
 - CNS pre-launch testing users - based on the addresses bound with CNS test domain names (by default, bound addresses are testing domain's holding addresses).
 - Holders of PassPaw NFT.
-- Any addresses that have donated more than 0.001 XCH to Pawket.xch (xch16xwqtf2d4jljks8lfpp4xnz8jak7jqjxc07y9tqlgt4grdp5hr4q7vcx3s), or have made a direct donation to the Pakwet team.
+- Anyone that have donated more than 0.001 XCH to Pawket.xch (xch16xwqtf2d4jljks8lfpp4xnz8jak7jqjxc07y9tqlgt4grdp5hr4q7vcx3s), or have made a direct donation to the Pakwet team.
 
 The snapshot for this airdrop has already been taken, with all tokens directly sent to the corresponding addresses. There's no need to manually claim. We will announce the list of qualified addresses later.
 
