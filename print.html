@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li><li class="chapter-item expanded "><a href="Tech-Subdomain.html"><strong aria-hidden="true">4.5.</strong> Subdomain</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li><li class="chapter-item expanded "><a href="Airdrop.html"><strong aria-hidden="true">6.2.</strong> Airdrop</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">8.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">9.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">10.</strong> Back Cover</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Cover.html"><strong aria-hidden="true">1.</strong> Cover</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">2.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Design.html"><strong aria-hidden="true">3.</strong> Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Lifecycle.html"><strong aria-hidden="true">3.1.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="Policy.html"><strong aria-hidden="true">3.2.</strong> Policy</a></li></ol></li><li class="chapter-item expanded "><a href="Architecture.html"><strong aria-hidden="true">4.</strong> Technical Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Tech-Registration.html"><strong aria-hidden="true">4.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="Tech-Resolution.html"><strong aria-hidden="true">4.2.</strong> Resolution</a></li><li class="chapter-item expanded "><a href="Tech-Management.html"><strong aria-hidden="true">4.3.</strong> Management</a></li><li class="chapter-item expanded "><a href="Tech-Renewing.html"><strong aria-hidden="true">4.4.</strong> Renewing</a></li><li class="chapter-item expanded "><a href="Tech-Subdomain.html"><strong aria-hidden="true">4.5.</strong> Subdomain</a></li></ol></li><li class="chapter-item expanded "><a href="Security.html"><strong aria-hidden="true">5.</strong> Security</a></li><li class="chapter-item expanded "><a href="Governance.html"><strong aria-hidden="true">6.</strong> Governance</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Pricing.html"><strong aria-hidden="true">6.1.</strong> Pricing</a></li><li class="chapter-item expanded "><a href="Airdrop.html"><strong aria-hidden="true">6.2.</strong> Airdrop</a></li></ol></li><li class="chapter-item expanded "><a href="Beyond.html"><strong aria-hidden="true">7.</strong> Beyond</a></li><li class="chapter-item expanded "><a href="API.html"><strong aria-hidden="true">8.</strong> API</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="Faq.html"><strong aria-hidden="true">9.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">10.</strong> About Us</a></li><li class="chapter-item expanded "><a href="BackCover.html"><strong aria-hidden="true">11.</strong> Back Cover</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -680,6 +680,86 @@ After the block is confirmed, the domain name will be displayed in your wallet.
 <p><strong>Don't believe in any airdrop links from the comment section! Stay safe!</strong></p>
 <p>Finally, let’s anticipate together that the upcoming year will be even more exciting for the Chia ecosystem!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="beyond"><a class="header" href="#beyond">Beyond</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="api"><a class="header" href="#api">API</a></h1>
+<h2 id="resolve"><a class="header" href="#resolve">Resolve</a></h2>
+<p><strong>NOTE:</strong> </p>
+<ol>
+<li>You can access the hosting service of CNS, or resolve it by yourself with or without this <a href="https://github.com/SutuLabs/pawket-api">reference code</a></li>
+<li>We are still working towards a more decentralized solution like the mechanism in the inscription chain.</li>
+</ol>
+<h3 id="api-to-resolve"><a class="header" href="#api-to-resolve">API to resolve</a></h3>
+<p>Here you can resolve the address through our API for demonstration purpose.</p>
+<p><strong>POST</strong> https://walletapi.chiabee.net/Name/resolve</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{
+    &quot;queries&quot;: [
+        {
+            &quot;name&quot;: &quot;chianameservice.xch&quot;,
+            &quot;type&quot;: &quot;address&quot;
+        }
+    ]
+}
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+    &quot;answers&quot;: [
+        {
+            &quot;name&quot;: &quot;chianameservice.xch&quot;,
+            &quot;type&quot;: &quot;address&quot;,
+            &quot;time_to_live&quot;: 600,
+            &quot;data&quot;: &quot;2fa8cc93dec82f50a7781ced27b6c2ee5a8e5efd1d70606b877c58bb8545e906&quot;,
+            &quot;proof_coin_name&quot;: &quot;0x59cffe9b0d863c74e04bd41aad96f39ca74bf8494d09e74aa387ad2dbc81086d&quot;,
+            &quot;proof_coin_spent_index&quot;: 4952003,
+            &quot;nft_coin_name&quot;: &quot;0x56506bca506dc262a27355a08f77d45c02bc7b48de09d1b1ab4d84864bd370df&quot;
+        }
+    ]
+}
+</code></pre>
+<p>the <code>data</code> is the Hex format of address, convert to xch address <a href="https://mixch.dev/#/tools/address">by bech32m tool</a>, and in this case, it should be: <code>xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2</code></p>
+<h2 id="verify-proof"><a class="header" href="#verify-proof">Verify Proof</a></h2>
+<p>The quick and dirty way is just resolve without verify, but to resist the malicious resolver, the client are persuade to verify the proof in the client side.</p>
+<p>Here is the steps:</p>
+<ol>
+<li>download coin data from blockchain for the proof coin</li>
+<li>parse(uncurry) the coin and check the correctness of name and binding address</li>
+<li>check the next coin of this proof coin is not spent (that the proof coin is the latest changes)</li>
+</ol>
+<h3 id="api-to-check-coin"><a class="header" href="#api-to-check-coin">API to check coin</a></h3>
+<p>Different client may have different way to get the coin details, here is one way to demonstrate this function.</p>
+<p><strong>POST</strong> https://walletapi.chiabee.net/Wallet/get-coin-solution</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{
+    &quot;coinIds&quot;: [
+        &quot;0x59cffe9b0d863c74e04bd41aad96f39ca74bf8494d09e74aa387ad2dbc81086d&quot;
+    ]
+}
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">[
+    {
+        &quot;coin&quot;: {
+            &quot;amount&quot;: 1,
+            &quot;parent_coin_info&quot;: &quot;0x804037b1362351a6e9b29f0dc3a821a81143dc499fd953a1b9573ed95fc4836e&quot;,
+            &quot;puzzle_hash&quot;: &quot;0x10d14864451e4c2e6e94d58512b29f7de603e77713ed62e4b23f1b8af44f3b0d&quot;
+        },
+        &quot;puzzle_reveal&quot;: &quot;0xff02ffff01ff02ffff0...&quot;,
+        &quot;solution&quot;: &quot;0xffffa0793d3984ad2321...&quot;,
+        &quot;confirmed_index&quot;: 4946819,
+        &quot;spent_index&quot;: 4952003,
+        &quot;timestamp&quot;: 1707986063
+    }
+]
+</code></pre>
+<h2 id="ui"><a class="header" href="#ui">UI</a></h2>
+<p><strong>Loading</strong></p>
+<p>After resolving, client need to get detail of proof coin, then this loading state could tell user it is verifying.</p>
+<p><img src="cns-loading.png" alt="" /></p>
+<p><strong>Verified</strong></p>
+<p>After verifying, it could tell user it's verified.</p>
+<p><img src="cns-verified.png" alt="" /></p>
+<p><strong>Not Found</strong></p>
+<p>If the address is not found in the resolver, then the error may tell user.</p>
+<p><img src="cns-not-found.png" alt="" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
 <h2 id="before-registration"><a class="header" href="#before-registration">Before Registration</a></h2>
 <h3 id="what-is-cns"><a class="header" href="#what-is-cns">What is CNS?</a></h3>
