@@ -750,6 +750,34 @@ After the block is confirmed, the domain name will be displayed in your wallet.
     }
 ]
 </code></pre>
+<h2 id="retrieve-all"><a class="header" href="#retrieve-all">Retrieve All</a></h2>
+<p>For some application, it's better to get all domain names at once, and resolve them locally with periodical update.</p>
+<h3 id="api-to-resolve-all"><a class="header" href="#api-to-resolve-all">API to resolve all</a></h3>
+<p>Here you can resolve the address through our API for demonstration purpose. (this API is not opened yet, but will be in next update)</p>
+<p><strong>GET</strong> https://walletapi.chiabee.net/Name/all</p>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">[
+  {
+    &quot;nft_coin_name&quot;: &quot;0x2a436bde91fa3535d44c7ccce7b216bc65be7171d628d1624d195a050274fd4b&quot;,
+    &quot;last_change_coin_name&quot;: &quot;0xc6e8127b66c194caad44eadad66d18bfab37e0343a9c2be0be35aada79a9b971&quot;,
+    &quot;last_change_spent_index&quot;: 3224782,
+    &quot;name&quot;: &quot;pawket.xch&quot;,
+    &quot;address&quot;: &quot;d19c05a54dacbf2b40ff4843534c47976de90246c3fc42ac1f42ea81b434b8ea&quot;,
+    &quot;bindings&quot;: {
+      &quot;address&quot;: &quot;d19c05a54dacbf2b40ff4843534c47976de90246c3fc42ac1f42ea81b434b8ea&quot;
+    }
+  },
+  {
+    &quot;nft_coin_name&quot;: &quot;0x4ca2e68be9e7089bde96add07e5cec2b1fa13f5728f9dcfbb5c46d644cb05151&quot;,
+    &quot;last_change_coin_name&quot;: &quot;0xa902271587fd5b96599c31eb592df940c3f36d08289b0d756ad49511de2fb617&quot;,
+    &quot;last_change_spent_index&quot;: 3225668,
+    &quot;name&quot;: &quot;onlyfansnft.xch&quot;,
+    &quot;address&quot;: &quot;7946dd4415470e985bbe94c4d0a953958d0c6d901dcab8762b27d36160d8462a&quot;,
+    &quot;bindings&quot;: {}
+  }
+]
+</code></pre>
+<p>the <code>address</code> is the Hex format of address, convert to xch address <a href="https://mixch.dev/#/tools/address">by bech32m tool</a>.</p>
 <h2 id="ui"><a class="header" href="#ui">UI</a></h2>
 <p><strong>Loading</strong></p>
 <p>After resolving, client need to get detail of proof coin, then this loading state could tell user it is verifying.</p>
