@@ -86,6 +86,45 @@ Different client may have different way to get the coin details, here is one way
 ]
 ```
 
+## Retrieve All
+
+For some application, it's better to get all domain names at once, and resolve them locally with periodical update.
+
+
+### API to resolve all
+
+Here you can resolve the address through our API for demonstration purpose. (this API is not opened yet, but will be in next update)
+
+**GET** https://walletapi.chiabee.net/Name/all
+
+
+**Response:**
+```json
+[
+  {
+    "nft_coin_name": "0x2a436bde91fa3535d44c7ccce7b216bc65be7171d628d1624d195a050274fd4b",
+    "last_change_coin_name": "0xc6e8127b66c194caad44eadad66d18bfab37e0343a9c2be0be35aada79a9b971",
+    "last_change_spent_index": 3224782,
+    "name": "pawket.xch",
+    "address": "d19c05a54dacbf2b40ff4843534c47976de90246c3fc42ac1f42ea81b434b8ea",
+    "bindings": {
+      "address": "d19c05a54dacbf2b40ff4843534c47976de90246c3fc42ac1f42ea81b434b8ea"
+    }
+  },
+  {
+    "nft_coin_name": "0x4ca2e68be9e7089bde96add07e5cec2b1fa13f5728f9dcfbb5c46d644cb05151",
+    "last_change_coin_name": "0xa902271587fd5b96599c31eb592df940c3f36d08289b0d756ad49511de2fb617",
+    "last_change_spent_index": 3225668,
+    "name": "onlyfansnft.xch",
+    "address": "7946dd4415470e985bbe94c4d0a953958d0c6d901dcab8762b27d36160d8462a",
+    "bindings": {}
+  }
+]
+```
+
+the `address` is the Hex format of address, convert to xch address [by bech32m tool](https://mixch.dev/#/tools/address).
+
+
 ## UI
 
 **Loading**
