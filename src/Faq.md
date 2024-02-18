@@ -6,7 +6,7 @@
 - CNS (Chia Name Service) is a decentralized domain name service built on the Chia blockchain. Use CNS to receive on-chain assets such as XCH, CATs, NFTs, etc. without copying and pasting lengthy and illegible addresses. Name format example: pawket.xch
 
 ### Which wallets currently support CNS?
-- Currently only [Pawket](https://info.pawket.app/download) wallet supports useing CNS instead of an address to send assets.
+- Currently only [Pawket](https://info.pawket.app/download) wallet supports using CNS instead of an address to send assets.
 
 ### Is CNS only for storing Chia addresses?
 - In addition to Chia addresses, CNS can also bind other information such as public key, DID, and text. In the future, social accounts such as Email and Twitter may be supported as well.
