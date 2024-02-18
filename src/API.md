@@ -43,6 +43,44 @@ Here you can resolve the address through our API for demonstration purpose.
 
 the `data` is the Hex format of address, convert to xch address [by bech32m tool](https://mixch.dev/#/tools/address), and in this case, it should be: `xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2`
 
+
+### Reverse resolving
+
+Sometime, we need to reverse resolving, from address to name, here is the example.
+
+**POST** https://walletapi.chiabee.net/Name/resolve
+
+**Request:**
+```json
+{
+  "queries": [
+    {
+      "name": "2cf90f43d2e01dce3a590bf71b944c0adb9d6b0cd50f24473a37606f9a601378",
+      "type": "name"
+    }
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "answers": [
+    {
+      "name": "slezisatoshi.xch",
+      "type": "name",
+      "time_to_live": 600,
+      "data": "2cf90f43d2e01dce3a590bf71b944c0adb9d6b0cd50f24473a37606f9a601378",
+      "proof_coin_name": "0x8549f5ac17c9ec80d00b2865ddde14040b7bb664fa23637cfdb822aead528043",
+      "proof_coin_spent_index": 3247777,
+      "nft_coin_name": "0x1dfa73a03ecd550074f35646553b7e5dd928b6fd9265597935142ddb62eae62e"
+    }
+  ]
+}
+```
+
+If the address is resolving to multiple names, the earliest change would be responsed.
+
 ## Verify Proof
 
 The quick and dirty way is just resolve without verify, but to resist the malicious resolver, the client are persuade to verify the proof in the client side.
