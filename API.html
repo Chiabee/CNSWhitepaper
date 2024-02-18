@@ -170,6 +170,35 @@
 }
 </code></pre>
 <p>the <code>data</code> is the Hex format of address, convert to xch address <a href="https://mixch.dev/#/tools/address">by bech32m tool</a>, and in this case, it should be: <code>xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2</code></p>
+<h3 id="reverse-resolving"><a class="header" href="#reverse-resolving">Reverse resolving</a></h3>
+<p>Sometime, we need to reverse resolving, from address to name, here is the example.</p>
+<p><strong>POST</strong> https://walletapi.chiabee.net/Name/resolve</p>
+<p><strong>Request:</strong></p>
+<pre><code class="language-json">{
+  &quot;queries&quot;: [
+    {
+      &quot;name&quot;: &quot;2cf90f43d2e01dce3a590bf71b944c0adb9d6b0cd50f24473a37606f9a601378&quot;,
+      &quot;type&quot;: &quot;name&quot;
+    }
+  ]
+}
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;answers&quot;: [
+    {
+      &quot;name&quot;: &quot;slezisatoshi.xch&quot;,
+      &quot;type&quot;: &quot;name&quot;,
+      &quot;time_to_live&quot;: 600,
+      &quot;data&quot;: &quot;2cf90f43d2e01dce3a590bf71b944c0adb9d6b0cd50f24473a37606f9a601378&quot;,
+      &quot;proof_coin_name&quot;: &quot;0x8549f5ac17c9ec80d00b2865ddde14040b7bb664fa23637cfdb822aead528043&quot;,
+      &quot;proof_coin_spent_index&quot;: 3247777,
+      &quot;nft_coin_name&quot;: &quot;0x1dfa73a03ecd550074f35646553b7e5dd928b6fd9265597935142ddb62eae62e&quot;
+    }
+  ]
+}
+</code></pre>
+<p>If the address is resolving to multiple names, the earliest change would be responsed.</p>
 <h2 id="verify-proof"><a class="header" href="#verify-proof">Verify Proof</a></h2>
 <p>The quick and dirty way is just resolve without verify, but to resist the malicious resolver, the client are persuade to verify the proof in the client side.</p>
 <p>Here is the steps:</p>
