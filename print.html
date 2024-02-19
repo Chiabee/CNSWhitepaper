@@ -682,7 +682,7 @@ After the block is confirmed, the domain name will be displayed in your wallet.
 <div style="break-before: page; page-break-before: always;"></div><h1 id="beyond"><a class="header" href="#beyond">Beyond</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="api"><a class="header" href="#api">API</a></h1>
 <h2 id="resolve"><a class="header" href="#resolve">Resolve</a></h2>
-<p><strong>NOTE:</strong> </p>
+<p><strong>NOTE:</strong></p>
 <ol>
 <li>You can access the hosting service of CNS, or resolve it by yourself with or without this <a href="https://github.com/SutuLabs/pawket-api">reference code</a></li>
 <li>We are still working towards a more decentralized solution like the mechanism in the inscription chain.</li>
@@ -692,30 +692,44 @@ After the block is confirmed, the domain name will be displayed in your wallet.
 <p><strong>POST</strong> https://walletapi.chiabee.net/Name/resolve</p>
 <p><strong>Request:</strong></p>
 <pre><code class="language-json">{
-    &quot;queries&quot;: [
-        {
-            &quot;name&quot;: &quot;chianameservice.xch&quot;,
-            &quot;type&quot;: &quot;address&quot;
-        }
-    ]
+  &quot;queries&quot;: [
+    {
+      &quot;name&quot;: &quot;chianameservice.xch&quot;,
+      &quot;type&quot;: &quot;address&quot;
+    }
+  ]
 }
 </code></pre>
 <p><strong>Response:</strong></p>
 <pre><code class="language-json">{
-    &quot;answers&quot;: [
-        {
-            &quot;name&quot;: &quot;chianameservice.xch&quot;,
-            &quot;type&quot;: &quot;address&quot;,
-            &quot;time_to_live&quot;: 600,
-            &quot;data&quot;: &quot;2fa8cc93dec82f50a7781ced27b6c2ee5a8e5efd1d70606b877c58bb8545e906&quot;,
-            &quot;proof_coin_name&quot;: &quot;0x59cffe9b0d863c74e04bd41aad96f39ca74bf8494d09e74aa387ad2dbc81086d&quot;,
-            &quot;proof_coin_spent_index&quot;: 4952003,
-            &quot;nft_coin_name&quot;: &quot;0x56506bca506dc262a27355a08f77d45c02bc7b48de09d1b1ab4d84864bd370df&quot;
-        }
-    ]
+  &quot;answers&quot;: [
+    {
+      &quot;name&quot;: &quot;chianameservice.xch&quot;,
+      &quot;type&quot;: &quot;address&quot;,
+      &quot;time_to_live&quot;: 600,
+      &quot;data&quot;: &quot;2fa8cc93dec82f50a7781ced27b6c2ee5a8e5efd1d70606b877c58bb8545e906&quot;,
+      &quot;proof_coin_name&quot;: &quot;0x59cffe9b0d863c74e04bd41aad96f39ca74bf8494d09e74aa387ad2dbc81086d&quot;,
+      &quot;proof_coin_spent_index&quot;: 4952003,
+      &quot;nft_coin_name&quot;: &quot;0x56506bca506dc262a27355a08f77d45c02bc7b48de09d1b1ab4d84864bd370df&quot;
+    }
+  ]
 }
 </code></pre>
-<p>the <code>data</code> is the Hex format of address, convert to xch address <a href="https://mixch.dev/#/tools/address">by bech32m tool</a>, and in this case, it should be: <code>xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2</code></p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody>
+<tr><td>name</td><td>the CNS name</td></tr>
+<tr><td>type</td><td>resolving type, for reverse resolving, it could also be <code>name</code></td></tr>
+<tr><td>time_to_live</td><td>the time in seconds that tells the client how long the resolution should be cached and then update.</td></tr>
+<tr><td>data</td><td>the resolving address in Hex format, convert to xch address <a href="https://mixch.dev/#/tools/address">by bech32m tool</a></td></tr>
+<tr><td>proof_coin_name</td><td>the last spent coin that prove the resolving is right</td></tr>
+<tr><td>proof_coin_spent_index</td><td>the latest change time (a.k.a. proof coin spent time) which is represented in block height</td></tr>
+<tr><td>nft_coin_name</td><td>the nft represented the CNS, and hold all the NFT information</td></tr>
+</tbody></table>
+</div>
+<p><strong>NOTE:</strong></p>
+<ul>
+<li>the <code>data</code> is in Hex format, and in this case, it should be: <code>xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2</code></li>
+<li>You can either get accurate block time from block chain or just roughly calculated like I did in Pawket here: <a href="https://github.com/SutuLabs/Pawket/blob/master/packages/pawket/src/components/Common/AddressField.vue#L223-L236">Code</a></li>
+</ul>
 <h3 id="reverse-resolving"><a class="header" href="#reverse-resolving">Reverse resolving</a></h3>
 <p>Sometime, we need to reverse resolving, from address to name, here is the example.</p>
 <p><strong>POST</strong> https://walletapi.chiabee.net/Name/resolve</p>
@@ -758,25 +772,23 @@ After the block is confirmed, the domain name will be displayed in your wallet.
 <p><strong>POST</strong> https://walletapi.chiabee.net/Wallet/get-coin-solution</p>
 <p><strong>Request:</strong></p>
 <pre><code class="language-json">{
-    &quot;coinIds&quot;: [
-        &quot;0x59cffe9b0d863c74e04bd41aad96f39ca74bf8494d09e74aa387ad2dbc81086d&quot;
-    ]
+  &quot;coinIds&quot;: [&quot;0x59cffe9b0d863c74e04bd41aad96f39ca74bf8494d09e74aa387ad2dbc81086d&quot;]
 }
 </code></pre>
 <p><strong>Response:</strong></p>
 <pre><code class="language-json">[
-    {
-        &quot;coin&quot;: {
-            &quot;amount&quot;: 1,
-            &quot;parent_coin_info&quot;: &quot;0x804037b1362351a6e9b29f0dc3a821a81143dc499fd953a1b9573ed95fc4836e&quot;,
-            &quot;puzzle_hash&quot;: &quot;0x10d14864451e4c2e6e94d58512b29f7de603e77713ed62e4b23f1b8af44f3b0d&quot;
-        },
-        &quot;puzzle_reveal&quot;: &quot;0xff02ffff01ff02ffff0...&quot;,
-        &quot;solution&quot;: &quot;0xffffa0793d3984ad2321...&quot;,
-        &quot;confirmed_index&quot;: 4946819,
-        &quot;spent_index&quot;: 4952003,
-        &quot;timestamp&quot;: 1707986063
-    }
+  {
+    &quot;coin&quot;: {
+      &quot;amount&quot;: 1,
+      &quot;parent_coin_info&quot;: &quot;0x804037b1362351a6e9b29f0dc3a821a81143dc499fd953a1b9573ed95fc4836e&quot;,
+      &quot;puzzle_hash&quot;: &quot;0x10d14864451e4c2e6e94d58512b29f7de603e77713ed62e4b23f1b8af44f3b0d&quot;
+    },
+    &quot;puzzle_reveal&quot;: &quot;0xff02ffff01ff02ffff0...&quot;,
+    &quot;solution&quot;: &quot;0xffffa0793d3984ad2321...&quot;,
+    &quot;confirmed_index&quot;: 4946819,
+    &quot;spent_index&quot;: 4952003,
+    &quot;timestamp&quot;: 1707986063
+  }
 ]
 </code></pre>
 <h2 id="retrieve-all"><a class="header" href="#retrieve-all">Retrieve All</a></h2>
