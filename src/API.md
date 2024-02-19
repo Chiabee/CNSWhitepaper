@@ -41,8 +41,20 @@ Here you can resolve the address through our API for demonstration purpose.
 }
 ```
 
-the `data` is the Hex format of address, convert to xch address [by bech32m tool](https://mixch.dev/#/tools/address), and in this case, it should be: `xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2`
+| Field                  | Description                                                                                                      |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| name                   | the CNS name                                                                                                     |
+| type                   | resolving type, for reverse resolving, it could also be `name`                                                   |
+| time_to_live           | the time in seconds that tells the client how long the resolution should be cached and then update.              |
+| data                   | the resolving address in Hex format, convert to xch address [by bech32m tool](https://mixch.dev/#/tools/address) |
+| proof_coin_name        | the last spent coin that prove the resolving is right                                                            |
+| proof_coin_spent_index | the latest change time (a.k.a. proof coin spent time) which is represented in block height                                                      |
+| nft_coin_name          | the nft represented the CNS, and hold all the NFT information                                                    |
 
+**NOTE:**
+
+- the `data` is in Hex format, and in this case, it should be: `xch1975vey77eqh4pfmcrnkj0dkzaedguhhar4cxq6u803vthp29ayrqp0ydw2`
+- You can either get accurate block time from block chain or just roughly calculated like I did in Pawket here: [Code](https://github.com/SutuLabs/Pawket/blob/master/packages/pawket/src/components/Common/AddressField.vue#L223-L236)
 
 ### Reverse resolving
 
