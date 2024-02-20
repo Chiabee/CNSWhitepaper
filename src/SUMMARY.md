@@ -14,6 +14,8 @@
     - [Management](./Tech-Management.md)
     - [Renewing](./Tech-Renewing.md)
     - [Subdomain](./Tech-Subdomain.md)
+- [Guide](./Guide.md)
+    - [Registration](./Guide-Registration.md)
 - [Security](./Security.md)
 - [Governance](./Governance.md)
     - [Pricing](./Pricing.md)

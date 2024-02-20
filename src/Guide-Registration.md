@@ -46,4 +46,3 @@ There are two ways to accept an offer. You can use [Chia Client](https://www.chi
    - Submit the transaction and wait for the block confirmation.
      ![image](https://user-images.githubusercontent.com/90297530/218033969-efa0f453-ca76-437e-bd81-5c61f5820f97.png)
    - After the block confirmation，you will see the name NFT in your Pawket.
-
