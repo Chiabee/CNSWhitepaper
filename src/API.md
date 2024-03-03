@@ -147,7 +147,7 @@ For some application, it's better to get all domain names at once, and resolve t
 
 ### API to resolve all
 
-Here you can resolve the address through our API for demonstration purpose. (this API is not opened yet, but will be in next update)
+Here you can resolve the address through our API for demonstration purpose.
 
 **GET** https://walletapi.chiabee.net/Name/all
 
