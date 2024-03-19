@@ -8,7 +8,7 @@ Get the price for domain registering.
 
 **Request:**
 
-```
+```text
 ?name=123458.xch&year=1&renew=false
 ```
 
