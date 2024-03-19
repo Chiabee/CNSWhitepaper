@@ -21,7 +21,10 @@
     - [Pricing](./Pricing.md)
     - [Airdrop](./Airdrop.md)
 - [Beyond](./Beyond.md)
-- [API](./API.md)
+- [API](./API/index.md)
+    - [Resolve](./API/Resolve.md)
+    - [Verify](./API/Verify.md)
+    - [Register](./API/Register.md)
 
 --------------
 
